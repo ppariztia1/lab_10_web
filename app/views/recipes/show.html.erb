@@ -1,0 +1,24 @@
+<div class="card shadow-sm p-4">
+  <h1><%= @recipe.title %></h1>
+  <p class="text-muted">
+    ⏱️ <%= @recipe.cook_time %> min |
+    💪 <%= @recipe.difficulty.capitalize %> |
+    👤 <%= @recipe.user.email %>
+  </p>
+
+  <hr>
+  <h4>📝 Instructions</h4>
+  <div class="mt-3">
+    <%= @recipe.instructions %>
+  </div>
+
+  <div class="mt-4">
+    <% if can?(:edit, @recipe) %>
+      <%= link_to "✏️ Edit", edit_recipe_path(@recipe), class: "btn btn-primary me-2" %>
+    <% end %>
+    <% if can?(:destroy, @recipe) %>
+      <%= link_to "🗑️ Delete", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger me-2" %>
+    <% end %>
+    <%= link_to "⬅️ Back", recipes_path, class: "btn btn-secondary" %>
+  </div>
+</div>

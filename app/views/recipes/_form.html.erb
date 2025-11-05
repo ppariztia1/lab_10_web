@@ -1,0 +1,26 @@
+<%= form_with model: @recipe do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, placeholder: "Ex: Choclo Pie", class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :cook_time, "Cook Time (minutes)" %>
+    <%= f.number_field :cook_time, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :difficulty, "Difficulty" %>
+    <%= f.select :difficulty, ["easy", "medium", "hard"], {}, class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :instructions, "Instructions" %>
+    <%= f.rich_text_area :instructions, class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Cancel", @recipe.persisted? ? recipe_path(@recipe) : recipes_path, class: "btn btn-secondary ms-2" %>
+  </div>
+<% end %>

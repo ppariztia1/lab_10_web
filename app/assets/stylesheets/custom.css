@@ -1,0 +1,166 @@
+/* === General layout === */
+body {
+  background-color: #f8f9fa;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #5a5a5a !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand:hover {
+  color: #212529 !important;
+}
+
+/* === Buttons === */
+.btn {
+  border-radius: 10px !important;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #5b9a8b;
+  border-color: #5b9a8b;
+}
+
+.btn-primary:hover {
+  background-color: #4d8578;
+  border-color: #4d8578;
+}
+
+.btn-success {
+  background-color: #78c091;
+  border-color: #78c091;
+}
+
+.btn-success:hover {
+  background-color: #64a87c;
+  border-color: #64a87c;
+}
+
+.btn-outline-danger {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.btn-outline-danger:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* === Cards === */
+.card {
+  border-radius: 12px;
+  transition: transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* === Recipe titles === */
+.card-title a {
+  color: #4d8578;
+  font-weight: 600;
+}
+
+.card-title a:hover {
+  color: #357a6d;
+  text-decoration: none;
+}
+
+/* === Trix editor (Instructions) === */
+.trix-content {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  font-family: inherit;
+}
+
+trix-toolbar {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: #f8f8f8;
+}
+
+/* === Flash messages === */
+.alert {
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #e6f4ec;
+  color: #2b6f4f;
+}
+
+.alert-danger {
+  background-color: #fdecea;
+  color: #992b1f;
+}
+
+/* === Navbar hover animation (Thermomix style) === */
+.navbar {
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #5b9a8b;
+  transition: width 0.4s ease;
+}
+
+.navbar:hover {
+  background-color: #f0f8f6;
+}
+
+.navbar:hover::after {
+  width: 100%;
+}
+
+/* === Button hover glow === */
+.btn {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(91, 154, 139, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #5b9a8b !important;
+  border-color: #5b9a8b !important;
+  box-shadow: 0 0 15px rgba(91, 154, 139, 0.6);
+}
+
+.btn-success:hover {
+  background-color: #78c091 !important;
+  border-color: #78c091 !important;
+  box-shadow: 0 0 15px rgba(120, 192, 145, 0.6);
+}
+
+.btn-outline-danger:hover {
+  box-shadow: 0 0 10px rgba(192, 57, 43, 0.4);
+}
